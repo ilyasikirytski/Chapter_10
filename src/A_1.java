@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Scanner;
 
 /*
@@ -10,14 +9,8 @@ import java.util.Scanner;
 public class A_1 {
     public static void main(String[] args) {
         ArrayList<String> listOfStrings = new ArrayList<>();
-        Comparator<String> comp = new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return -1;
-            }
-        };
         BufferedReader bf = null;
-        Scanner scan = null;
+        Scanner scan;
         PrintWriter pw = null;
         try {
             bf = new BufferedReader(new FileReader(new File("C:\\Users\\Admin\\Desktop\\", "Chapter_8_input.txt")));
@@ -28,7 +21,7 @@ public class A_1 {
                     listOfStrings.add(scan.nextLine());
                 }
             }
-            Collections.sort(listOfStrings, comp);
+            Collections.reverse(listOfStrings);
             for (String s : listOfStrings) {
                 pw.println(s);
             }
