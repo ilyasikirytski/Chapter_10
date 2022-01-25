@@ -8,8 +8,8 @@ public class MyStack<E> extends Vector<E> {
     public void insert(E value) {
         if (head == null) {
             Node<E> firstNode = new Node<>(value);
-            firstNode.next = head;
             head = firstNode;
+            firstNode.next = head;
             head = new Node<>(value);
         }
         Node<E> currentNode = head;
