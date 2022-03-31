@@ -12,7 +12,8 @@ import java.util.LinkedList;
 public class B_1_LinkedList {
     public static void main(String[] args) {
         LinkedList<Integer> persons = new LinkedList<>();
-        for (int i = 0; i <= 10; i++) {
+        int listSize = 10;
+        for (int i = 1; i <= listSize; i++) {
             persons.add(i);
         }
         System.out.println(persons);

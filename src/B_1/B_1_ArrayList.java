@@ -10,10 +10,17 @@ package B_1;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/*
+Размер массива в переменную
+чем отлич. arrayList от linkedList
+сложность операций - почит
+ */
 public class B_1_ArrayList {
     public static void main(String[] args) {
         ArrayList<Integer> persons = new ArrayList<>();
-        for (int i = 0; i <= 10; i++) {
+        int arraySize = 10;
+
+        for (int i = 1; i <= arraySize; i++) {
             persons.add(i);
         }
         System.out.println(persons);
