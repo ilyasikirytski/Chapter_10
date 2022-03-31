@@ -6,36 +6,19 @@
  */
 package B_5;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
+/*
+создать свою структуру
+измненить добавление элементов.
+ */
 public class B_5 {
-
-    private static final ArrayList<Integer> myList = new ArrayList<>();
-
     public static void main(String[] args) {
-        myList.add(1);
-        myList.add(3);
-        myList.add(5);
-        myList.add(7);
-        myList.add(1);
-        myList.add(9);
-        myList.add(20);
-        myList.add(30);
-        System.out.println(find(14));
-
-    }
-
-    public static Integer find(Integer number) {
-        Iterator<Integer> iterator = myList.iterator();
-        Integer min = iterator.next();
-
-        while (iterator.hasNext()) {
-            Integer elem = iterator.next();
-            if (Math.abs(elem - number) < Math.abs(min - number)) {
-                min = elem;
-            }
+        MyStructure myStructure = new MyStructure();
+        for (int i = 0; i < 10; i++) {
+            myStructure.myList.add((int) (Math.random() * 100));
         }
-        return min;
+        System.out.println(myStructure.findMostCloseNumber(5));
+        System.out.println(myStructure.myList);
+        myStructure.remove(3);
+        System.out.println(myStructure.myList);
     }
 }
