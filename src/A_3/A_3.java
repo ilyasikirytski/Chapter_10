@@ -4,13 +4,21 @@ import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.Stack;
 
 /*
 3. Создать в стеке индексный массив для быстрого доступа к записям в бинарном файле.
  */
+/*
+так ведь у стека уже есть доступ быстрый доступ
+по индексу доступ к элементам стека - get(5);
+peak()
+pop()
+ */
 public class A_3 {
     public static void main(String[] args) {
-        MyStack<String> myStack = new MyStack<String>();
+        Stack<String> stack = new Stack<>();
         DataInputStream dataInputStream;
         byte[] readingBytes;
         try {
@@ -27,7 +35,7 @@ public class A_3 {
                 }
                 if (wordsFromFile != null) {
                     for (String s : wordsFromFile) {
-                        myStack.insert(s);
+                        stack.push(s);
                     }
                 }
             }
@@ -36,12 +44,17 @@ public class A_3 {
             e1.printStackTrace();
         }
 
-        myStack.remove("ilya");
-        myStack.remove(3);
-        for (String s : myStack) {
-            System.out.println(s);
+        stack.remove("ilya");
+        System.out.println(stack.get(3));
+        stack.remove(3);
+        for (int i = 0; i < stack.size(); i++) {
+            System.out.println(stack.get(i));
         }
-        System.out.println(myStack.size());
+        System.out.println(stack.size());
+
+        Iterator<String> stackIterator = stack.iterator();
+        while (stackIterator.hasNext())
+            System.out.println(stackIterator.next());
     }
 }
 
