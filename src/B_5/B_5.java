@@ -10,15 +10,18 @@ package B_5;
 создать свою структуру
 измненить добавление элементов.
  */
+/*
+myList внутри не нужен
+ */
 public class B_5 {
     public static void main(String[] args) {
         MyStructure myStructure = new MyStructure();
         for (int i = 0; i < 10; i++) {
-            myStructure.myList.add((int) (Math.random() * 100));
+            myStructure.add((int) (Math.random() * 100));
         }
         System.out.println(myStructure.findMostCloseNumber(5));
-        System.out.println(myStructure.myList);
+        System.out.println(myStructure);
         myStructure.remove(3);
-        System.out.println(myStructure.myList);
+        System.out.println(myStructure);
     }
 }
