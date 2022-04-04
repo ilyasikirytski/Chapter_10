@@ -10,14 +10,9 @@ import kotlin.math.abs
 private val myList = ArrayList<Int>()
 
 fun main() {
-    myList.add(1)
-    myList.add(3)
-    myList.add(5)
-    myList.add(7)
-    myList.add(1)
-    myList.add(9)
-    myList.add(20)
-    myList.add(30)
+    for (i in 0 until 10) {
+        myList.add((Math.random() * 100).toInt())
+    }
     println(find(14))
 }
 
@@ -30,5 +25,6 @@ fun find(number: Int): Int {
             min = elem
         }
     }
+    println(myList)
     return min
 }
